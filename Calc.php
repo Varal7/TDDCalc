@@ -5,10 +5,13 @@ class Calc
      if ($numbers == "") {
        return 0;
      }
-     $num_arr = explode(",", $numbers);
      $result = 0;
-     foreach ($num_arr as $num) {
-       $result = $result + intval($num);
+     $num_arr = explode(",", $numbers);
+     foreach ($num_arr as $part) {
+       $part_arr = explode("\n", $part);
+       foreach ($part_arr as $num) {
+         $result = $result + intval($num);
+       }
      }
      return $result;
    }
