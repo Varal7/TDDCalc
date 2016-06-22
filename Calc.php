@@ -16,7 +16,11 @@ class Calc
        $numbers = explode(",", $string);
      }
      foreach ($numbers as $num) {
-       $result = $result + intval($num);
+       $int = intval($num);
+       if ($int < 0) {
+         throw new InvalidArgumentException("This is not a nonnegative integer:". $int);
+       }
+       $result = $result + $int;
      }
      return $result;
    }
