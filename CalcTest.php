@@ -24,4 +24,8 @@ class CalcTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($result, 3);
     }
 
+    public function testAddMultipleNumbers() {
+        $result = $this->calc->add("1,2,3,4,5");
+        $this->assertEquals($result, 15);
+    }
 }
