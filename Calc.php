@@ -10,19 +10,13 @@ class Calc
      if (substr($lines[0], 0, 2) == "//") {
        $delimiter = explode("/", $lines[0])[2];
        $numbers = explode($delimiter, $lines[1]);
-       foreach ($numbers as $num) {
-         $result = $result + intval($num);
-       }
-       return $result;
      }
-
-
-     $num_arr = explode(",", $string);
-     foreach ($num_arr as $part) {
-       $part_arr = explode("\n", $part);
-       foreach ($part_arr as $num) {
-         $result = $result + intval($num);
-       }
+     else {
+       $string = str_replace("\n", ",", $string);
+       $numbers = explode(",", $string);
+     }
+     foreach ($numbers as $num) {
+       $result = $result + intval($num);
      }
      return $result;
    }
