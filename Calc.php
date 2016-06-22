@@ -15,12 +15,17 @@ class Calc
        $string = str_replace("\n", ",", $string);
        $numbers = explode(",", $string);
      }
+
+    $negativeNumbers = "";
      foreach ($numbers as $num) {
        $int = intval($num);
        if ($int < 0) {
-         throw new InvalidArgumentException("This is not a nonnegative integer:". $int);
+        $negativeNumbers .= " ".$int;
        }
        $result = $result + $int;
+     }
+     if ($negativeNumbers != "") {
+         throw new InvalidArgumentException("This is not a nonnegative integer:". $negativeNumbers);
      }
      return $result;
    }
