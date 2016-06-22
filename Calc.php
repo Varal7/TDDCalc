@@ -5,5 +5,6 @@ class Calc
      if ($numbers == "") {
        return 0;
      }
+     return intval($numbers);
    }
 }
