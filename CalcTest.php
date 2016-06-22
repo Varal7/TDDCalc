@@ -28,4 +28,9 @@ class CalcTest extends PHPUnit_Framework_TestCase {
         $result = $this->calc->add("1,2,3,4,5");
         $this->assertEquals($result, 15);
     }
+
+    public function testAddMultipleNumbersWithNewLines() {
+        $result = $this->calc->add("1,2,3\n4,5");
+        $this->assertEquals($result, 15);
+    }
 }
