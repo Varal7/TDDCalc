@@ -18,4 +18,10 @@ class CalcTest extends PHPUnit_Framework_TestCase {
         $result = $this->calc->add("1");
         $this->assertEquals($result, 1);
     }
+
+    public function testAddTwoNumber() {
+        $result = $this->calc->add("1,2");
+        $this->assertEquals($result, 3);
+    }
+
 }
