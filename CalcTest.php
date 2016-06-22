@@ -2,14 +2,20 @@
 require ('Calc.php');
 
 class CalcTest extends PHPUnit_Framework_TestCase {
+
+    private $calc;
+
+    function __construct() {
+      $this->calc = new Calc();
+    }
+
     public function testAddEmptyString() {
-        $c = new Calc();
-        $result = $c->add("");
+        $result = $this->calc->add("");
         $this->assertEquals($result, 0);
     }
+
     public function testAddOneNumber() {
-        $c = new Calc();
-        $result = $c->add("1");
+        $result = $this->calc->add("1");
         $this->assertEquals($result, 1);
     }
 }
