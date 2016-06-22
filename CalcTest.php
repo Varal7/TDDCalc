@@ -38,4 +38,11 @@ class CalcTest extends PHPUnit_Framework_TestCase {
       $result = $this->calc->add("//;\n1;2");
       $this->assertEquals($result, 3);
     }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testNegativeNumbersShouldThrowException() {
+      $result = $this->calc->add("5,-3");
+    }
 }
