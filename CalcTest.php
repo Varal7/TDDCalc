@@ -33,4 +33,9 @@ class CalcTest extends PHPUnit_Framework_TestCase {
         $result = $this->calc->add("1,2,3\n4,5");
         $this->assertEquals($result, 15);
     }
+
+    public function testSupportDifferentDelimiters() {
+      $result = $this->calc->add("//;\n1;2");
+      $this->assertEquals($result, 3);
+    }
 }
