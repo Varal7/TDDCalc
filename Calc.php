@@ -5,6 +5,11 @@ class Calc
      if ($numbers == "") {
        return 0;
      }
-     return intval($numbers);
+     $num_arr = explode(",", $numbers);
+     $result = 0;
+     foreach ($num_arr as $num) {
+       $result = $result + intval($num);
+     }
+     return $result;
    }
 }
