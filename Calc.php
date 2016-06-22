@@ -3,7 +3,7 @@ class Calc
 {
    public function add($string) {
      if ($string == "") {
-       return 0;
+       return -1;
      }
      $result = 0;
      $lines = explode("\n", $string);
