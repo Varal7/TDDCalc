@@ -41,8 +41,18 @@ class CalcTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @expectedException InvalidArgumentException
+     * @expectedExceptionMessageRegExp /-3/
      */
     public function testNegativeNumbersShouldThrowException() {
       $result = $this->calc->add("5,-3");
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     * @expectedExceptionMessageRegExp /-3/
+     * @expectedExceptionMessageRegExp /-5/
+     */
+    public function testNegativeNumbersShouldThrowExceptionWithAllNumbers() {
+      $result = $this->calc->add("-5,-3");
     }
 }
